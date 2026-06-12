@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GrapesJS Studio Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        :root {
+            --gjs-t-color-primary: #cf549e;
+            --gjs-t-color-secondary: #b9227d;
+            --gjs-t-color-accent: #ffb347;
+            --gjs-t-color-success: #28a745;
+            --gjs-t-color-warning: #ffc107;
+            --gjs-t-color-error: #dc3545;
+        }
+
+        body {
+            background-color: #e7e7e7;
+            font-family: system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            padding: 50px 50px 35px;
+        }
+
+        .logo {
+            height: 120px;
+            display: block;
+            margin: 0 auto;
+            width: 120px;
+        }
+
+        .card {
+            max-width: 700px;
+            padding: 40px 45px;
+            background-color: white;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+
+        .title {
+            margin: 0;
+            text-align: center;
+        }
+
+        .gjs-t-body {
+            background-color: inherit;
+            color: inherit;
+            font-size: 1rem;
+            line-height: 1.75rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin: 0;
+            padding: 25px 0;
+        }
+
+        .paragraph {
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .link {
+            color: #af4e8a;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .gjs-t-h1 {
+            color: var(--gjs-t-color-secondary);
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+
+        .button {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            text-align: center;
+            border-width: 0;
+        }
+
+        .gjs-t-h2 {
+            color: #601843;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+        }
+
+        .gjs-t-button {
+            background-color: var(--gjs-t-color-primary);
+            color: white;
+            border-radius: 0.3rem;
+        }
+
+        .gjs-t-link {
+            color: var(--gjs-t-color-primary);
+            text-decoration: underline;
+        }
+
+        .gjs-t-border {
+            border-radius: 0.3rem;
+            border-color: #e0e0e0;
+        }
+
+        #iuaq6 {
+            flex-basis: 100%;
+        }
+
+        #i2fv6 {
+            width: 100%;
+        }
+
+        #my_body {
+            background-image: linear-gradient(black 1%, black 100%);
+            background-position: 0px 0px;
+            background-size: 100% 100%;
+            background-repeat: unset;
+            background-attachment: unset;
+            background-origin: unset;
+            padding-top: 0.0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #ie9q8 {
+            flex-basis: 100%;
+        }
+
+        #iap91-2 {
+            width: 500px;
+            position: static;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            top: 0%;
+            right: auto;
+            bottom: auto;
+        }
+
+        .form_container {
+            display: grid;
+            background-color: white;
+        }
+
+        .gjs-plg-flex-row {
+            display: flex;
+            gap: 10px;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            max-width: 100%;
+            min-width: 50%;
+        }
+
+        #iw96t {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        #logo {
+            max-width: 560px;
+        }
+
+        .event_card {
+            aspect-ratio: 4 / 6;
+            max-width: 400px;
+            min-width: 100px;
+            width: 100%;
+            background-color: black;
+            padding-bottom: 20px;
+            padding: 10px;
+        }
+
+        .event_card-copy {
+            max-width: 200px;
+        }
+
+        .event_card_layout {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 30px;
+            justify-items: center;
+            padding-top: 10px;
+            padding-right: 150px;
+            padding-bottom: 40px;
+            padding-left: 150px;
+        }
+
+        #iv6iw {
+            flex-basis: 20%;
+        }
+
+        #izs56 {
+            flex-basis: 20%;
+        }
+
+        #izgcu {
+            flex-basis: 20%;
+        }
+
+        #i3e5c {
+            flex-basis: 20%;
+        }
+
+        .event_card:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 0px 50px #ff9b00;
+            cursor: pointer;
+        }
+
+        .event_card:active {
+            transform: scale(1.01);
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            padding-top: 40px;
+            padding-right: 0px;
+            padding-bottom: 40px;
+            padding-left: 0px;
+        }
+
+        #logo_container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            flex-basis: 0%;
+        }
+
+        .standup_budet_links_grid {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+        }
+
+        #vk_col {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #iq3z6b {
+            flex-basis: 20%;
+        }
+
+        .link_sheet {
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+
+        .gjs-custom-code {
+            padding: 0px;
+        }
+
+        #tg_col {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        .my_body {
+            outline: 1px solid red;
+        }
+
+        .header__phone {
+            font-family: FiraSans, sans-serif;
+            font-size: auto;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social_link:hover {
+            opacity: 1;
+            color: #ff9d00;
+            text-shadow: 0 0 10px #ff9d00;
+            transform: scale(1.05);
+            filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(1860%) hue-rotate(359deg) brightness(105%) contrast(104%);
+        }
+
+        .social_icons {
+            aspect-ratio: 1 / 1;
+            min-width: 20px;
+            max-width: 40px;
+        }
+
+        .number_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo_container {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        .social_link_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social_link_container_row {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        .event_card_image {
+            width: 100%;
+            height: auto;
+            display: block;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .event_card_image_container {
+            padding: 0px;
+        }
+
+        .event_card_date_place_container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            justify-items: center;
+            justify-content: space-between;
+        }
+
+        .event_card_description_container {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .event_card_button_price_container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+
+        .event_info_font_style {
+            font-family: Courier New, Courier, monospace;
+            font-size: 14px;
+            color: #ff9b00;
+            text-align: justify;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .event_card_button_style {
+            background-color: white;
+            height: 40px;
+            width: auto;
+            transform-style: preserve-3d;
+            overflow: visible;
+            color: black;
+            font-family: Times New Roman, Times, serif;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: outset;
+            border-right-style: outset;
+            border-bottom-style: outset;
+            border-left-style: outset;
+            border-top-color: white;
+            border-right-color: white;
+            border-bottom-color: white;
+            border-left-color: white;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .event_card_price_container {
+            display: grid;
+            align-items: center;
+            max-width: 90px;
+        }
+
+        .event_card_price_font_style {
+            font-family: Courier New, Courier, monospace;
+            font-size: 20px;
+            color: #ff9b00;
+        }
+
+        .event_card_info_describ_style_2 {
+            font-family: Courier New, Courier, monospace;
+            font-size: 14px;
+            color: white;
+            text-align: justify;
+        }
+
+        .event_card_description_container_2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .event_card_button_price_container_2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0px;
+            justify-items: center;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+
+        .event_card_button_style_2 {
+            background-color: #ff9b00;
+            height: 40px;
+            width: auto;
+            transform-style: preserve-3d;
+            overflow: visible;
+            color: black;
+            font-family: Tahoma, Geneva, sans-serif;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: outset;
+            border-right-style: outset;
+            border-bottom-style: outset;
+            border-left-style: outset;
+            border-color: #ff9b00;
+            text-transform: capitalize;
+            letter-spacing: 3px;
+            font-size: 12px;
+            justify-content: space-around;
+            font-weight: 900;
+            text-decoration: none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .event_carr_button_price_container_3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .event_card_description_font_style {
+            color: white;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon_icon {
+            width: 15px;
+            height: 15px;
+            color: #ff9b00;
+            flex: 0 0 auto;
+        }
+
+        .event_card_date_place_container-copy {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            justify-items: center;
+            justify-content: space-between;
+        }
+
+        #i7yc8n {
+            width: 5px;
+            height: auto;
+            display: block;
+            color: #ff9b00;
+        }
+
+        .event_carr_button_price_container_3-copy {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            justify-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+
+        .event_info_font_style-copy {
+            font-family: Courier New, Courier, monospace;
+            font-size: 14px;
+            color: #ff9b00;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .social_link_row {
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .social_link_container_column {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: space-around;
+            max-width: 100%;
+            min-width: 50%;
+        }
+
+        #logo_container-2 {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            flex-basis: 0%;
+        }
+
+        #tg_col-2 {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #vk_col-2 {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #i7yc8n-2 {
+            width: 5px;
+            height: auto;
+            display: block;
+            color: #ff9b00;
+        }
+
+        #my_body-2 {
+            background-image: linear-gradient(black 1%, black 100%);
+            background-position: 0px 0px;
+            background-size: 100% 100%;
+            background-repeat: unset;
+            background-attachment: unset;
+            background-origin: unset;
+            padding-top: 0.0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #logo_container-2-2 {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            flex-basis: 0%;
+        }
+
+        #tg_col-2-2 {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #vk_col-2-2 {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #my_body-2-2 {
+            background-image: linear-gradient(black 1%, black 100%);
+            background-position: 0px 0px;
+            background-size: 100% 100%;
+            background-repeat: unset;
+            background-attachment: unset;
+            background-origin: unset;
+            padding-top: 0.0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        .form_row {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(200px, 1fr));
+            justify-items: center;
+        }
+
+        .gjs-plg-flex-column {
+            flex-grow: 1;
+        }
+
+        .form_field_ {
+            width: 400px;
+        }
+
+        .modal-form {
+            max-width: 500px;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .modal-form__input {
+            aspect-ratio: 10/1;
+            width: 100%;
+        }
+
+        .modal-form__field {
+            width: auto;
+            min-height: 50px;
+            display: flex;
+        }
+
+        .modal-form__input--phone {
+            margin-right: 5px;
+        }
+
+        .modal-form__input--email {
+            margin-left: 5px;
+        }
+
+
+        .radio-img {
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        input[type="radio"]:checked+.radio-img {
+            border-color: #ff9b00;
+            background: #ff9b00;
+        }
+
+        #iq74od {
+            color: white;
+        }
+
+        #ijimgr {
+            width: 52px;
+            height: 52px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .event_card_layout {
+                order: 0;
+            }
+
+            .navbar {
+                order: 1;
+                margin-top: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 20px !important;
+                padding: 15px 10px;
+            }
+
+            #logo {
+                max-width: 280px;
+            }
+
+            .social_link_container {
+                order: 1 !important;
+            }
+
+            .logo_container {
+                order: 0;
+                max-width: 180px;
+                padding-top: 0px;
+                padding-right: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+            }
+
+            .number_container {
+                justify-content: center;
+                order: 2;
+                padding: 0;
+            }
+
+            .social_icons {
+                max-width: 40px;
+            }
+
+            .social_link.header__phone {
+                font-size: auto;
+            }
+
+            .social_link_container_row {
+                gap: 20px;
+            }
+
+            #number_container {
+                flex-basis: 0%;
+            }
+
+            #logo_container {
+                flex-basis: 0%;
+            }
+
+            #social_link_container {
+                flex-basis: 0%;
+            }
+
+            .event_card_layout {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 260px));
+                justify-items: center;
+                justify-content: center;
+                padding: 0px;
+            }
+
+            .logo {
+                height: 60px;
+                width: auto;
+            }
+
+            .gjs-plg-flex-row {
+                width: 100%;
+            }
+
+            #number_container-2 {
+                flex-basis: 0%;
+            }
+
+            #logo_container-2 {
+                flex-basis: 0%;
+            }
+
+            #logo_container-2 {
+                flex-basis: 0%;
+            }
+
+            #logo_container-2-2 {
+                flex-basis: 0%;
+            }
+
+            #logo_container-2-2 {
+                flex-basis: 0%;
+            }
+
+            #ijimgr {
+                width: 48px;
+                height: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body id="my_body-2-2">
+    <div data-type-role="flex-row" id="iw96t-2-2-2" class="navbar">
+        <div data-type-role="flex-column" id="empty_container-2-2" title="Stand Up Будет" class="number_container">
+        </div>
+        <div data-type-role="flex-column" id="logo_container-2-2" title="Stand Up Будет" class="logo_container"><img
+                src="assets/logo_2.png" id="logo-2-2-2" alt="" class="logo" />
+        </div>
+        <div data-type-role="flex-column" id="contacts_container-2-2" title="Stand Up Будет"
+            class="social_link_container">
+            <div id="contacts_container_column-2-2" class="social_link_container_column">
+                <div id="number_row-2-2" class="social_link_row"><a href="tel:+7(905)3800461"
+                        content="+7 (905) 779-91-11" id="iwf5a-2-2-2" class="header__phone social_link">+7 (905)
+                        380-04-61</a></div>
+                <div id="socials_row-2-2" class="gjs-custom-code">
+                    <div data-type-role="flex-row" id="icw4dv-2-2" class="social_link_row">
+                        <div data-type-role="flex-column" id="tg_col-2-2" class="link_sheet">
+                            <div id="tg_col_link-2-2" class="vk_links"><a id="tg_link-2-2"
+                                    href="https://t.me/standupbudet" title="" class="social_link"><img
+                                        src="assets/tg.png" id="tg_icon-2-2" alt="Stand Up Budet VK"
+                                        class="social_icons" /></a>
+                            </div>
+                        </div>
+                        <div data-type-role="flex-column" id="vk_col-2-2" class="link_sheet">
+                            <div id="vk_col_link-2-2"><a id="i4shgl-2-2-2" href="https://vk.com/standupbudet"
+                                    class="social_link"><img src="assets/vk.png" id="vk_icon-2-2"
+                                        alt="Stand Up Budet VK" class="social_icons" /></a>
+                            </div>
+                        </div>
+                        <div data-type-role="flex-column" id="inst_col-2-2" class="link_sheet">
+                            <div id="inst_col_link-2-2"><a id="inst_link-2-2" href="https://vk.com/standupbudet"
+                                    class="social_link"><img src="assets/inst.png" id="inst_icon-2-2"
+                                        alt="Stand Up Budet VK" class="social_icons" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="i2o8s-2-2" class="gjs-custom-code">
+        <form method="post" id="form_container_" class="modal-form">
+            <!-- {% csrf_token %} -->
+            <div id="name_container" class="modal-form__field"><br /><input type="text" id="guest_firstname_input"
+                    name="guest_firstname" placeholder="Имя" minlength="2"
+                    class="modal-form__input modal-form__input--firstname" />
+            </div>
+            <div id="surname_container" class="modal-form__field"><br /><input type="text" id="guest_surname_input"
+                    name="guest_surname" placeholder="Фамилия" minlength="2"
+                    class="modal-form__input modal-form__input--surname" />
+            </div>
+            <div id="phone_container" class="modal-form__field">
+                <br /><input type="number" id="guest_phone_input" name="guest_phone" placeholder="Номер телефона"
+                    class="modal-form__input modal-form__input--phone" /><input type="email" id="guest_phone_input-2"
+                    name="guest_email" placeholder="Email" class="modal-form__input modal-form__input--email" />
+            </div>
+            <div id="number_of_guests_container" class="modal-form__field">
+                <label class="radio-label">
+                    <input type="radio" name="number_of_guests" id="radio_button" required value="1" hidden>
+                    <div class="radio-img">
+                        <img src="assets/guest.png" width="50" alt="1 гость">
+                        <div>1 гость</div>
+                    </div>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="number_of_guests" id="radio_button" required value="1" hidden>
+                    <div class="radio-img">
+                        <img src="assets/guests_2.png" width="50" alt="1 гость">
+                        <div>2 гостя</div>
+                    </div>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="number_of_guests" id="radio_button" required value="1" hidden>
+                    <div class="radio-img">
+                        <img src="assets/guests_3.png" width="50" alt="1 гость">
+                        <div>3 гостя</div>
+                    </div>
+                </label>
+            </div>
+            <div id="resevation_button_container" class="modal-form__actions">
+                <button type="submit" id="iw6zlr">Забронировать</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    document.querySelectorAll('radio-label').forEach(radio => {
+        radio.addEventListener('click', function (e) {
+            // Если эта кнопка уже была выбрана
+            if (this.checked) {
+                e.preventDefault();  // Отменяем стандартное поведение
+                this.checked = false; // Снимаем выделение
+
+                // Убираем CSS-класс с карточки
+                const card = this.nextElementSibling;
+                card.style.borderColor = '#ccc';
+                card.style.backgroundColor = 'white';
+            }
+        });
+    });
+</script>
+
+</html>

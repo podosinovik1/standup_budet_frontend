@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StandUp Будет – мероприятия</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="index,follow">
+    <meta name="generator" content="GrapesJS Studio">
+    <style>
+        /* ========== ОРИГИНАЛЬНЫЕ СТИЛИ (ваши) ========== */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        :root {
+            --gjs-t-color-primary: #cf549e;
+            --gjs-t-color-secondary: #b9227d;
+            --gjs-t-color-accent: #ffb347;
+            --gjs-t-color-success: #28a745;
+            --gjs-t-color-warning: #ffc107;
+            --gjs-t-color-error: #dc3545;
+        }
+
+        body {
+            background-color: #e7e7e7;
+            font-family: system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .head {
+            padding: 50px 50px 35px;
+        }
+
+        .logo {
+            height: 180px;
+            display: block;
+            margin: 0 auto;
+            width: auto;
+        }
+
+        .card {
+            max-width: 700px;
+            padding: 40px 45px;
+            background-color: white;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+
+        .title {
+            margin: 0;
+            text-align: center;
+        }
+
+        .gjs-t-body {
+            background-color: inherit;
+            color: inherit;
+            font-size: 1rem;
+            line-height: 1.75rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin: 0;
+            padding: 25px 0;
+        }
+
+        .paragraph {
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .link {
+            color: #af4e8a;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .gjs-t-h1 {
+            color: var(--gjs-t-color-secondary);
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+        }
+
+        .button {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            text-align: center;
+            border-width: 0;
+        }
+
+        .gjs-t-h2 {
+            color: #601843;
+            font-size: 1.2rem;
+            line-height: 1.75rem;
+        }
+
+        .gjs-t-button {
+            background-color: var(--gjs-t-color-primary);
+            color: white;
+            border-radius: 0.3rem;
+        }
+
+        .gjs-t-link {
+            color: var(--gjs-t-color-primary);
+            text-decoration: underline;
+        }
+
+        .gjs-t-border {
+            border-radius: 0.3rem;
+            border-color: #e0e0e0;
+        }
+
+        #iuaq6 {
+            flex-basis: 100%;
+        }
+
+        #i2fv6 {
+            width: 100%;
+        }
+
+        #my_body {
+            background-image: linear-gradient(black 1%, black 100%);
+            background-position: 0px 0px;
+            background-size: 100% 100%;
+            background-repeat: unset;
+            background-attachment: unset;
+            background-origin: unset;
+            padding-top: 0.0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #ie9q8 {
+            flex-basis: 100%;
+        }
+
+        #iap91-2 {
+            width: 500px;
+            position: static;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            top: 0%;
+            right: auto;
+            bottom: auto;
+        }
+
+        .gjs-plg-flex-column {
+            display: grid;
+            padding-bottom: 100px;
+        }
+
+        .gjs-plg-flex-row {
+            display: flex;
+            gap: 10px;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            max-width: 100%;
+            min-width: 50%;
+        }
+
+        #iw96t {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        #logo {
+            max-width: 720px;
+        }
+
+        .event_card {
+            aspect-ratio: 4 / 6;
+            max-width: 400px;
+            min-width: 100px;
+            width: 100%;
+            background-color: black;
+            padding-bottom: 20px;
+            padding: 10px;
+        }
+
+        .event_card-copy {
+            max-width: 200px;
+        }
+
+        .event_card_layout {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-bottom: 30px;
+            justify-items: center;
+            padding-top: 10px;
+            padding-right: 150px;
+            padding-bottom: 40px;
+            padding-left: 150px;
+        }
+
+        #iv6iw {
+            flex-basis: 20%;
+        }
+
+        #izs56 {
+            flex-basis: 20%;
+        }
+
+        #izgcu {
+            flex-basis: 20%;
+        }
+
+        #i3e5c {
+            flex-basis: 20%;
+        }
+
+        .event_card:hover {
+            transform: scale(1.01);
+            box-shadow: 0px 0px 50px #ff9b00;
+            cursor: pointer;
+        }
+
+        .event_card:active {
+            transform: scale(1.01);
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            padding-top: 40px;
+            padding-right: 0px;
+            padding-bottom: 40px;
+            padding-left: 0px;
+        }
+
+        #logo_container {
+            max-width: 100%;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            flex-basis: 0%;
+        }
+
+        .standup_budet_links_grid {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+        }
+
+        #vk_col {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        #iq3z6b {
+            flex-basis: 20%;
+        }
+
+        .link_sheet {
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+        }
+
+        .gjs-custom-code {
+            padding: 0px;
+        }
+
+        #tg_col {
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+        }
+
+        .my_body {
+            outline: 1px solid red;
+        }
+
+        .header__phone {
+            font-family: FiraSans, sans-serif;
+            font-size: auto;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social_link:hover {
+            opacity: 1;
+            color: #ff9d00;
+            text-shadow: 0 0 10px #ff9d00;
+            transform: scale(1.05);
+            filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(1860%) hue-rotate(359deg) brightness(105%) contrast(104%);
+        }
+
+        .social_icons {
+            aspect-ratio: 1 / 1;
+            min-width: 20px;
+            max-width: 40px;
+        }
+
+        .number_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo_container {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        .social_link_container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social_link_container_row {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            padding-top: 0px;
+            padding-right: 0px;
+            padding-bottom: 0px;
+            padding-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+        }
+
+        .event_card_image {
+            width: 100%;
+            height: auto;
+            display: block;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .event_card_image_container {
+            padding: 0px;
+        }
+
+        .event_card_date_place_container {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            justify-items: center;
+            justify-content: space-between;
+        }
+
+        .event_card_description_container {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .event_card_button_price_container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+
+        .event_info_font_style {
+            font-family: Courier New, Courier, monospace;
+            font-size: 14px;
+            color: #ff9b00;
+            text-align: justify;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .event_card_button_style {
+            background-color: white;
+            height: 40px;
+            width: auto;
+            transform-style: preserve-3d;
+            overflow: visible;
+            color: black;
+            font-family: Times New Roman, Times, serif;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: outset;
+            border-right-style: outset;
+            border-bottom-style: outset;
+            border-left-style: outset;
+            border-top-color: white;
+            border-right-color: white;
+            border-bottom-color: white;
+            border-left-color: white;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+
+        .event_card_price_container {
+            display: grid;
+            align-items: center;
+            max-width: 90px;
+        }
+
+        .event_card_price_font_style {
+            font-family: Courier New, Courier, monospace;
+            font-size: 20px;
+            color: #ff9b00;
+        }
+
+        .event_card_info_describ_style_2 {
+            font-family: Courier New, Courier, monospace;
+            font-size: 14px;
+            color: white;
+            text-align: justify;
+        }
+
+        .event_card_description_container_2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .event_card_button_price_container_2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0px;
+            justify-items: center;
+            padding-top: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+        }
+
+        .event_card_button_style_2 {
+            background-color: #ff9b00;
+            height: 40px;
+            width: auto;
+            transform-style: preserve-3d;
+            overflow: visible;
+            color: black;
+            font-family: Tahoma, Geneva, sans-serif;
+            border-top-width: 1px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-left-width: 1px;
+            border-top-style: outset;
+            border-right-style: outset;
+            border-bottom-style: outset;
+            border-left-style: outset;
+            border-color: #ff9b00;
+            text-transform: capitalize;
+            letter-spacing: 3px;
+            font-size: 12px;
+            justify-content: space-around;
+            font-weight: 900;
+            text-decoration: none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .event_carr_button_price_container_3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .event_card_description_font_style {
+            color: white;
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon_icon {
+            width: 15px;
+            height: 15px;
+            color: #ff9b00;
+            flex: 0 0 auto;
+        }
+
+        .event_card_date_place_container-copy {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            justify-items: center;
+            justify-content: space-between;
+        }
+
+        #i7yc8n {
+            width: 5px;
+            height: auto;
+            display: block;
+            color: #ff9b00;
+        }
+
+        .event_carr_button_price_container_3-copy {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            justify-items: center;
+            justify-content: space-between;
+            padding-top: 10px;
+        }
+
+        .event_info_font_style-copy {
+            font-family: Courier New, Courier, monospace;
+            font-size: 14px;
+            color: #ff9b00;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .social_link_row {
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .social_link_container_column {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            justify-content: space-around;
+            max-width: 100%;
+            min-width: 50%;
+        }
+
+        /* ИСПРАВЛЕННЫЙ МЕДИА-ЗАПРОС ДЛЯ 768px – навигация больше не уезжает вниз */
+        @media (max-width: 768px) {
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .event_card_layout {
+                order: 0;
+            }
+
+            .navbar {
+                order: 0;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                gap: 20px !important;
+                padding: 15px 10px;
+            }
+
+            #logo {
+                max-width: 280px;
+            }
+
+            #contacts_hidden {
+                display: none;
+            }
+
+            #burger_column {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .logo_container {
+                order: 0;
+                max-width: 180px;
+                padding-top: 0px;
+                padding-right: 0px;
+                padding-bottom: 0px;
+                padding-left: 0px;
+            }
+
+            .number_container {
+                justify-content: center;
+                order: 2;
+                padding: 0;
+            }
+
+            .social_icons {
+                max-width: 40px;
+            }
+
+            .social_link.header__phone {
+                font-size: auto;
+            }
+
+            .social_link_container_row {
+                gap: 20px;
+            }
+
+            #number_container {
+                flex-basis: 0%;
+            }
+
+            #logo_container {
+                flex-basis: 0%;
+            }
+
+            #social_link_container {
+                flex-basis: 0%;
+            }
+
+            .event_card_layout {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 280px));
+                justify-items: center;
+                justify-content: center;
+                padding: 0px;
+            }
+
+            .logo {
+                height: 80px;
+                width: auto;
+            }
+
+            .gjs-plg-flex-row {
+                width: 100%;
+            }
+
+            #number_container-2 {
+                flex-basis: 0%;
+            }
+
+            #logo_container-2 {
+                flex-basis: 0%;
+            }
+        }
+
+        /* ========== СТИЛИ ДЛЯ БУРГЕР-МЕНЮ (в потоке, не фиксирован) ========== */
+        .burger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 24px;
+            cursor: pointer;
+            margin: 0 auto;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .burger-menu:hover {
+            transform: scale(1.05);
+        }
+
+        .burger-menu span {
+            display: block;
+            position: relative;
+            height: 3px;
+            width: 100%;
+            background: white;
+            border-radius: 3px;
+            margin: 3px 0;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        }
+
+        .burger-menu:hover span {
+            background-color: #ff9d00;
+            box-shadow: 0 0 10px #ff9d00;
+        }
+
+        .burger-menu.active span:nth-child(1) {
+            transform: translateY(9px) rotate(135deg);
+        }
+
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger-menu.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-135deg);
+        }
+
+        /* Сохраняем подсветку при наведении на активный бургер, но не ломаем крестик */
+        .burger-menu.active:hover span {
+            background-color: #ff9d00;
+            box-shadow: 0 0 10px #ff9d00;
+        }
+
+        #burger_column {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #contacts_hidden {
+            display: none;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .offcanvas {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 320px;
+            max-width: 80%;
+            height: 100%;
+            background-color: #111;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 1200px) {
+            .offcanvas {
+                width: 400px;
+            }
+        }
+
+        .offcanvas.active {
+            transform: translateX(0);
+        }
+
+        .offcanvas-header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px;
+        }
+
+        .offcanvas-close {
+            font-size: 32px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .offcanvas-content {
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Стили для контактов внутри оффканава – центрирование */
+        .offcanvas .social_link_container {
+            margin-top: 0;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .offcanvas .social_link_row {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .offcanvas .social_icons {
+            max-width: 35px;
+            width: auto;
+            height: auto;
+        }
+
+        .offcanvas .header__phone {
+            font-size: 18px;
+            white-space: normal;
+            word-break: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body id="my_body">
+
+    <!-- Скрытый контейнер с контактами (только для клонирования в оффканав) -->
+    <div id="contacts_hidden">
+        <div class="social_link_container_column">
+            <div class="social_link_row">
+                <a href="tel:+7(905)3800461" class="header__phone social_link">+7 (905) 380-04-61</a>
+            </div>
+            <div class="social_link_row">
+                <a href="https://t.me/standupbudet" class="social_link"><img src="assets/tg.png" class="social_icons"
+                        alt="Telegram" /></a>
+                <a href="https://vk.com/standupbudet" class="social_link"><img src="assets/vk.png" class="social_icons"
+                        alt="VK" /></a>
+                <a href="https://www.instagram.com/standupbudet/" class="social_link"><img src="assets/inst.png"
+                        class="social_icons" alt="Instagram" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Оффканав (бургер-меню) -->
+    <div class="offcanvas" id="offcanvas">
+        <div class="offcanvas-header">
+            <span class="offcanvas-close" id="closeMenu">&times;</span>
+        </div>
+        <div class="offcanvas-content" id="offcanvasContent"></div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Основная навигационная панель -->
+    <div data-type-role="flex-row" id="iw96t-2" class="navbar">
+        <!-- Левая пустая колонка (баланс) -->
+        <div class="number_container"></div>
+        <!-- Центральная колонка с логотипом -->
+        <div id="logo_container" class="logo_container">
+            <img src="assets/logo_2.png" id="logo-2" alt="Логотип" class="logo" />
+        </div>
+        <!-- Правая колонка с бургером (вместо контактов) -->
+        <div id="burger_column">
+            <div class="burger-menu" id="burgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Карточки мероприятий (без изменений) -->
+    <div id="i2o8s" class="gjs-custom-code">
+        <div id="i8bxp-2" class="main">
+            <div data-type-role="flex-row" id="ix6g4-2" class="event_card_layout">
+                <div data-type-role="flex-column" id="iv6iw-2-2" class="event_card">
+                    <div id="i35x2-2" class="event_card_image_container">
+                        <img src="assets/photo_2026-03-20_02-09-04.jpg" id="if6ue-2" class="event_card_image" />
+                    </div>
+                    <div id="ie269-2" class="event_card_date_place_container-copy">
+                        <div class="event_card_price_container">
+                            <div id="i6n3m-2-2" class="event_info_font_style">16 мая</div>
+                        </div>
+                        <div class="event_card_price_container"><img src="assets/point.png" id="i7yc8n" /></div>
+                        <div class="event_card_price_container">
+                            <div id="ies7q-2" class="event_info_font_style">Угли-Мята</div>
+                        </div>
+                    </div>
+                    <div id="i37ku-2" class="event_card_description_container">
+                        <div id="iqtfl-2" class="event_info_font_style event_card_description_font_style">
+                            Для жителей Солнечного и окрестностей: комики заряжены и готовы вас смешить.
+                        </div>
+                    </div>
+                    <div id="iik1f-3" class="event_carr_button_price_container_3">
+                        <div id="idgd5-2" class="gjs-custom-code">
+                            <div id="iik1f-2-2">
+                                <button type="button" id="izdk5f-2"
+                                    class="event_card_button_style_2">Забронировать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            document.addEventListener('DOMContentLoaded', function () {
+                const burger = document.getElementById('burgerBtn');
+                const offcanvas = document.getElementById('offcanvas');
+                const overlay = document.getElementById('overlay');
+                const closeBtn = document.getElementById('closeMenu');
+                const offcanvasContent = document.getElementById('offcanvasContent');
+
+                // Клонируем скрытый контейнер с контактами
+                const hiddenContacts = document.getElementById('contacts_hidden');
+                if (hiddenContacts && offcanvasContent) {
+                    offcanvasContent.innerHTML = '';
+                    const clone = hiddenContacts.cloneNode(true);
+                    clone.removeAttribute('id');
+                    // Дополнительное центрирование через инлайн-стили (основное уже в CSS)
+                    clone.style.display = 'flex';
+                    clone.style.flexDirection = 'column';
+                    clone.style.alignItems = 'center';
+                    clone.style.gap = '20px';
+                    offcanvasContent.appendChild(clone);
+                }
+
+                function openMenu() {
+                    burger.classList.add('active');
+                    offcanvas.classList.add('active');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closeMenu() {
+                    burger.classList.remove('active');
+                    offcanvas.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                burger.addEventListener('click', openMenu);
+                closeBtn.addEventListener('click', closeMenu);
+                overlay.addEventListener('click', closeMenu);
+
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && offcanvas.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
