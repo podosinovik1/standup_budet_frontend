@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StandUp Budet — Стендап в Саратове</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href='main.css'>
+    <link rel="icon" href='images/icon.png'>
+</head>
+
+<body id="body">
+    <div class="navbar">
+        <div></div>
+        <div class="logo_container">
+            <img src='images/logo.png' alt="Логотип" class="logo" />
+        </div>
+        <div></div>
+    </div>
+
+    <div id="main">
+        <div id="title" class="page title">Текущие мероприятия</div>
+
+        <div class="event-cards">
+            <div class="event-cards__card">
+                <img src="images/show.jpg" class="event-cards__image" alt="Мероприятие" />
+                <div class="event-cards__buttons">
+                    <button type="button" class="about-button buttons" onclick="location.href='/about';">Подробнее</button>
+                    <button type="button" class="booking-button buttons">Забронировать</button>
+                </div>
+                <div class="event-cards__info">
+                    <div class="gjs-custom-code">
+                        <div class="page date-number">15</div>
+                        <div class="page date-month">Сентября</div>
+                    </div>
+                    <div class="page place">Пивной Бульвар</div>
+                    <div class="page description">
+                        Стендап-концерт с участием лучших комиков города
+                    </div>
+                    <span class="page price">500₽</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div></div>
+        <div class="footer__contacts">
+            <a href="mailto:standupbudet@gmail.com" class="highlight-hover page">standupbudet@gmail.com</a>
+            <a href="https://www.instagram.com/standupbudet" class="highlight-hover">
+                <img src="images/inst.png" alt="Instagram" class="social_icons" />
+            </a>
+            <a href="https://vk.com/standupbudet" class="highlight-hover">
+                <img src="images/vk.png" alt="ВКонтакте" class="social_icons" />
+            </a>
+            <a href="https://t.me/standupbudet" class="highlight-hover">
+                <img src="images/tg.png" alt="Telegram" class="social_icons" />
+            </a>
+        </div>
+        <div></div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://ticketscloud.com/static/scripts/widget/tcwidget.js"></script>
+</body>
+
+</html>

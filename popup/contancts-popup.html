@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>popup_contanct_window</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="contacts-popup.css">
+</head>
+
+<body>
+  <div class="main">
+    <div>
+      <p class="page" style="font-size: 72px;">Мой основной текст здесь</p>
+      <button class="booking-button" data-tc-event="id">Забронировать</button>
+      <button class="booking-button" data-tc-event="">Забронировать</button>
+    </div>
+    <div class="overlay">
+      <div class="contact-popup">
+        <div class="page">
+          Забронировать можно по телефону
+        </div>
+        <a class="page highlight-hover contact-popup__number">+7 951 884-98-45</a>
+        <div class="page">
+          или напишите нам в соцсетях
+        </div>
+        <div class="contact-popup__socials">
+          <a href="https://t.me/standupbudet" class="highlight-hover">
+            <img src="https://storage.yandexcloud.net/standup-budet-frontend/images/tg.png" alt="Telegram"
+              class="social_icons">
+          </a>
+          <a href="https://vk.com/standupbudet" class="highlight-hover">
+            <img src="https://storage.yandexcloud.net/standup-budet-frontend/images/vk.png" alt="ВКонтакте"
+              class="social_icons">
+          </a>
+        </div>
+        <button type="button" class="close-button highlight-hover">✕</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="contact-popup.js"></script>
+</body>
+
+</html>
