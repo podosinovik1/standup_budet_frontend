@@ -1,0 +1,40 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+djvenv*/
+djvenv_ubuntu/
+
+# Python
+__pycache__/
+.pytest_cache
+*.pyo
+*.pyc
+*.egg-info/
+dist/
+build/
+
+# Django
+*.log
+# local_settings.py
+# db.sqlite3
+# /media/
+# /static/
+app/db.sqlite3
+app/media/
+
+# Настройки IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Файлы чувствительных данных
+*.env
+nginx/ssl/
+ssl/
+
+# Другое
