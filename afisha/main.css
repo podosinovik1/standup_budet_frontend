@@ -171,20 +171,6 @@ body {
     scale: 0.98;
 }
 
-/* .event-cards__info {
-    position: absolute;
-    bottom: 1%;
-    right: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    max-width: 55%;
-    height: 100%;
-    padding: 1%;
-    padding-right: 15px;
-} */
 
 .event-cards__info {
     position: absolute;
@@ -244,7 +230,7 @@ body {
     right: 4%;
     z-index: 3;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     color: #ff9b00;
 }
@@ -270,7 +256,7 @@ body {
     gap: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     body {
         flex-direction: column;
     }
@@ -284,9 +270,35 @@ body {
         gap: 1.5vw;
         padding: 30px;
     }
+
+    .date-number {
+        font-size: 32px;
+    }
+
+    .date-month {
+        font-size: 14px;
+    }
+
+    .place {
+        font-size: 12px;
+    }
+
+    .description {
+        font-size: 8px;
+    }
+
+    .event-cards_price {
+        font-size: 22px;
+    }
+
+    .buttons {
+        font-size: 10px !important;
+    }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 500
+px) {
     .navbar {
         display: flex;
         flex-direction: column;
@@ -326,10 +338,10 @@ body {
     }
 
     .date-number {
-        font-size: 32px;
+        font-size: 35px;
     }
 
-    .price {
-        font-size: 24px;
+    .event-cards_price {
+        font-size: 28px;
     }
 }
