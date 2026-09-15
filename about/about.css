@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    outline: 1px dashed rgba(128, 128, 128, 0.3);
+}
+
+.page {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000000;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: left;
+}
+
+.logo {
+    display: block;
+    width: 120px;
+    height: 120px;
+    max-height: 180px;
+    margin: 0 auto;
+}
+
+.logo_container {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.logo_container img {
+    max-width: 40%;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 0;
+}
+
+.about-page {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 3% 0 3%;
+    padding: 1% 5% 0 5%;
+    width: auto;
+    max-width: 1200px;
+    height: auto;
+    gap: 15px;
+}
+
+.about-page__event {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    width: 100%;
+}
+
+
+.event-poster {
+    width: 100%;
+    height: auto;
+}
+
+.event-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
+    padding-left: 40px;
+}
+
+.event-name {
+    align-content: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 3px #ff9d00;
+}
+
+.event-venue {
+    color: #ff9d00;
+    align-content: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 3px #ff9d00;
+}
+
+.event-datetime {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-row: 1fr 1fr;
+}
+
+.event-description {
+    font-size: 24px;
+    align-content: center;
+}
+
+.booking {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.booking-button {
+    /* height: 50px;
+    width: 50%; */
+    border-radius: 10px;
+
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #ff9b00;
+}
+
+.about-page__gallery {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr;
+    grid-template-rows: 2;
+    align-items: center;
+    gap: 10px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.main-image {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.about-page__map {}
+
+.map {
+    width: 200px;
+    aspect-ratio: 1/1;
+}
+
+.footer {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 0 30px;
+}
+
+.footer__contacts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social_icons {
+    aspect-ratio: 1 / 1;
+    min-width: 20px;
+    max-width: 40px;
+}
+
+.highlight-hover:hover {
+    opacity: 1;
+    color: #ff9d00;
+    text-shadow: 0 0 10px #ff9d00;
+    transform: scale(1.05);
+    filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(1860%) hue-rotate(359deg) brightness(105%) contrast(104%);
+}
+
+@media (max-width:768px) {}
+
+@media (max-width:480px) {}

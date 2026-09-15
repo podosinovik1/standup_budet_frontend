@@ -38,3 +38,6 @@ nginx/ssl/
 ssl/
 
 # Другое
+
+# Zaemit AI tool config (auto-generated)
+.mcp.json
