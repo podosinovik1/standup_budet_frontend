@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    outline: 1px dashed rgba(128, 128, 128, 0.3);
+    /* outline: 1px dashed rgba(128, 128, 128, 0.3); */
 }
 
 .page {
@@ -75,7 +75,7 @@ body {
 .event-info {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr 2fr 1fr;
     padding-left: 40px;
 }
 
@@ -90,7 +90,7 @@ body {
 
 .event-venue {
     color: #ff9d00;
-    align-content: center;
+    align-content: start;
     text-transform: uppercase;
     font-size: 28px;
     font-weight: 700;
@@ -102,27 +102,36 @@ body {
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-row: 1fr 1fr;
+    align-items: center;
+    font-size: 22px;
 }
+
 
 .event-description {
     font-size: 24px;
-    align-content: center;
+    align-content: start;
 }
 
 .booking {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: left;
+    align-items: center;
 }
 
 .booking-button {
-    /* height: 50px;
-    width: 50%; */
-    border-radius: 10px;
-
+    height: 60px;
+    width: auto;
+    border-radius: 30px;
+    padding: 0 30px;  
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
+    background-color: #ff9b00;
 }
 
 .price {
-    font-size: 30px;
+    font-size: 34px;
     font-weight: 600;
     text-transform: uppercase;
     color: #ff9b00;
