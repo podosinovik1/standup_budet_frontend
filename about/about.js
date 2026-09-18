@@ -3,18 +3,12 @@ document.querySelectorAll('.gallery-image').forEach(img => {
 
         const imgOverlay = document.createElement('overlay');
         imgOverlay.style.cssText = `
-            position: absolute;
-            right: 0; top: 0;
-            text-align: right;
-            font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
             font-size: clamp(10px, 1.05vw, 1.5vw);
-            padding-right: 8%;
-            font-weight: 900;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, rgba(128, 128, 128, 0.1) 0%);
-            border: 0;
+            background: linear-gradient(90deg, rgb(0, 0, 0, 0.8) 0%);
             height: 100%; width: 100%;
-            border-radius: 7px;
             cursor: pointer;
         `;
 
@@ -40,7 +34,7 @@ document.querySelectorAll('.gallery-image').forEach(img => {
             transform: translate(-50%, -50%);
             width: 500px;
             height: auto;
-            z-index: 1000;
+            z-index: 1001;
             cursor: pointer;
         `;
 
