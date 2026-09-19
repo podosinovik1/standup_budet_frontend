@@ -1,7 +1,7 @@
-* {
+/* * {
     box-sizing: border-box;
-    /* outline: 1px dashed rgba(128, 128, 128, 0.3); */
-}
+    outline: 1px dashed rgba(128, 128, 128, 0.3);
+} */
 
 .page {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -145,7 +145,7 @@ body {
 
 .about-page__gallery {
     display: grid;
-    grid-template-columns: 4fr 2fr 2fr;
+    grid-template-columns: 4fr 5fr;
     grid-template-rows: 2;
     align-items: center;
     gap: 10px;
@@ -167,7 +167,6 @@ body {
 .gallery-image:hover {
     transform: scale(1.05);
 }
-
 
 .about-page__venue {
     display: grid;
