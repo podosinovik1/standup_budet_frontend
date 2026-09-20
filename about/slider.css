@@ -77,3 +77,12 @@
 .slide img:hover {
     transform: scale(1.05);
 }
+
+
+@media (max-width:768px) {}
+
+@media (max-width:480px) {
+    .slider-wrapper {
+        display: none;
+    }
+}
