@@ -1,6 +1,6 @@
 const galleryImage = document.querySelectorAll('.gallery-image');
-const slides = document.querySelectorAll('.slide');        // ← было slide (NodeList)
-const mainImage = document.querySelector('.main-image');    // ← один элемент, не querySelectorAll
+const slides = document.querySelectorAll('.slide');
+const mainImage = document.querySelector('.main-image');
 
 // Обмен ссылками между main-image и кликнутым slide
 slides.forEach(slide => {
@@ -10,20 +10,16 @@ slides.forEach(slide => {
         const slideImg = slide.querySelector('img');
         if (!slideImg) return;
 
-        // запоминаем текущие src
-        const mainSrc = mainImage.src;
         const slideSrc = slideImg.src;
 
-        // меняем местами
         mainImage.src = slideSrc;
-        slideImg.src = mainSrc;
     });
 });
 
-// Остальная логика (превью по клику на .gallery-image) — без изменений
+
 galleryImage.forEach(img => {
     img.addEventListener('click', () => {
-        const imgOverlay = document.createElement('div');   // ← div, а не overlay
+        const imgOverlay = document.createElement('div');
         imgOverlay.style.cssText = `
             position: fixed;
             inset: 0;
