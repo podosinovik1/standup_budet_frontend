@@ -19,7 +19,6 @@ body {
     text-align: left;
 }
 
-
 .logo {
     display: block;
     width: 120px;
@@ -84,10 +83,14 @@ body {
     display: block;
 }
 
+.event-poster__shadow {
+    display: none;
+    }
+
 .event-info {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 2fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr 2fr;
     padding-left: 40px;
 }
 
@@ -113,12 +116,15 @@ body {
 .event-info__description {
     font-size: clamp(16px, 2vw, 24px);
     align-content: start;
+    
+    max-height: 150px;
+    overflow: hidden;
 }
 
 .event-info__datetime {
     display: grid;
     grid-template-columns: 1fr 6fr;
-    grid-row: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
     align-items: center;
     font-size: 22px;
 }
@@ -275,7 +281,7 @@ body {
 
 @media (max-width:480px) {
     .about-page {
-        padding: 0 60px;
+        padding: 0 15% 0 15%;
         margin: 0px;
     }
 
@@ -288,12 +294,6 @@ body {
     .about-page__venue {
         display: flex;
         flex-wrap: wrap;
-    }
-
-    .event-info {
-        margin-top: -30px;
-        padding: 0px;
-        z-index: 1;
     }
 
     .event-poster {
@@ -311,10 +311,73 @@ body {
 
     .event-poster__shadow {
         /* display: none; */
+        display: block;
         position: absolute;
         inset: 0;
         left: -30%;
         width: 150%;
         box-shadow: inset 0 -40px 30px 15px black;
+    }
+
+    .event-info {
+        margin-top: -30px;
+        padding: 0px;
+        z-index: 1;
+        
+        display: grid;
+        grid-template-rows: 35px 20px auto auto auto;
+        height: auto;
+        gap: 10px 0px;
+    }
+
+    .event-info__name {
+        font-size: 20px;
+    }
+
+    .event-info__venue {
+        font-size: 16px;
+    }
+
+    .event-info__description {
+        font-size: 14px;
+        min-height: 50px;
+        max-height: 90px;
+        overflow: hidden;
+    }
+
+    .event-info__datetime {
+        display: inline grid;
+        grid-template-columns: 100px 50px;
+        grid-template-rows: 1fr;
+        gap: 0px 10px;
+        justify-items: center;
+        padding-top: 20px;
+    }
+
+    .date  {
+        display: none;
+    }
+
+    .time {
+        display: none;
+    }
+
+    .data {
+        font-size: 16px;
+        width: auto;
+        border-radius: 5px;
+        border: 1px solid #ff9b00;
+        padding: 2px 5px 2px 5px;
+    }
+
+    .booking {
+        display: flex;
+        align-items: start;
+    }
+
+    .booking-button {
+        min-height: 40px;
+        font-size: 18px;
+        width: 100%;
     }
 }
