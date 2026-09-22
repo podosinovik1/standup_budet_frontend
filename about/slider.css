@@ -79,10 +79,26 @@
 }
 
 
-@media (max-width:768px) {}
+@media (max-width:768px) {
+    .slider-wrapper {
+        min-width: 100px;
+    }
+}
 
 @media (max-width:480px) {
-    .slider-wrapper {
-        display: none;
+    .gallery-button img {
+        height: 40px;
+    }
+
+    .gallery-button.left {
+        left: 5px;
+    }
+
+    .gallery-button.right {
+        right: 5px;
+    }
+
+    .slider {
+        grid-template-rows: 1fr;
     }
 }
