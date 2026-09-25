@@ -20,12 +20,12 @@
     <div class="main">
         <div class="about-page">
             <div class="about-page__event">
-                
-                <div class="event-poster" >
+
+                <div class="event-poster">
                     <img src="images/show.jpg" />
                     <div class="event-poster__shadow"></div>
                 </div>
-                    
+
 
                 <div class="event-info">
                     <div class="page event-info__name">Стендап Вечер</div>
@@ -45,21 +45,23 @@
                         С
                     </div>
 
-                    <div class="page event-info__datetime">
-                        <div class="date">Дата</div>
-                        <div class="data date-data">04.09</div>
-                        <div class="time">Время</div>
-                        <div class="data time-data">19:30</div>
-                        <!-- <div class="price">Цена</div>
-                        <div class="data price-data">500₽</div> -->
-                    </div>
+                    <div class="event-info__button-datetime-wrapper">
+                        <div class="booking">
+                            <button type="button" class="page booking-button" data-tc-event=""
+                                data-tc-token="">Забронировать</button>
+                            <!-- <div class="price">500₽</div> -->
+                        </div>
+                        <div class="page event-info__datetime">
+                            <div class="date">Дата</div>
+                            <div class="data date-data">04.09</div>
+                            <div class="time">Время</div>
+                            <div class="data time-data">19:30</div>
+                            <!-- <div class="price">Цена</div>
+                            <div class="data price-data">500₽</div> -->
+                        </div>
 
-                    <div class="booking">
-                        <button type="button" class="page booking-button" data-tc-event=""
-                            data-tc-token="">Забронировать</button>
-                        <!-- <div class="price">500₽</div> -->
-                    </div>
 
+                    </div>
                 </div>
 
             </div>
@@ -91,13 +93,14 @@
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae51d0efc79f9c4a895e604f7275d87b8a866c3964f3fcc14ab13ed2483cd63f0&amp;source=constructor"
                     frameborder="0"></iframe>
 
-
-
                 <div class="page venue-info">
                     <div class="venue-info__name">Пивной Бульвар</div>
 
                     <img class="venue-icon" src="images/map-point.png" />
-                    <div class="venue-info__address">Проспект Столыпина, 29</div>
+                    <div class="venue-info__address highlight-hover">
+                        <a href="https://yandex.ru/maps/org/pivnoy_bulvar/1137553396/?ll=46.026361%2C51.531546&z=16.06">Проспект
+                            Столыпина, 29</a>
+                    </div>
 
                     <img class="venue-icon" src="images/phone.png" />
                     <div class="venue-info__phone highlight-hover">
@@ -116,12 +119,11 @@
         <div class="footer">
             <div></div>
             <div class="footer__contacts"><a href="mailto:standupbudet@gmail.com"
-                    class="highlight-hover page">standupbudet@gmail.com</a><a
-                    href="https://www.instagram.com/standupbudet" class="highlight-hover"><img src="images/inst.png"
-                        alt="Instagram" class="social_icons" /></a><a href="https://vk.com/standupbudet"
-                    class="highlight-hover"><img src="images/vk.png" alt="ВКонтакте" class="social_icons" /></a><a
-                    href="https://t.me/standupbudet" class="highlight-hover"><img src="images/tg.png" alt="Telegram"
-                        class="social_icons" /></a>
+                    class="highlight-hover page">standupbudet@gmail.com</a><a href="https://max.ru/channel_standupbudet"
+                    class="highlight-hover"><img src="images/max.png" alt="Max" class="social_icons" /></a><a
+                    href="https://vk.com/standupbudet" class="highlight-hover"><img src="images/vk.png" alt="ВКонтакте"
+                        class="social_icons" /></a><a href="https://t.me/standupbudet" class="highlight-hover"><img
+                        src="images/tg.png" alt="Telegram" class="social_icons" /></a>
             </div>
             <div></div>
         </div>
