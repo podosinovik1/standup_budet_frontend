@@ -49,9 +49,24 @@ body {
     max-width: 40px;
 }
 
-.highlight-hover:hover {
-    opacity: 1;
-    transform: scale(1.05);
+/* Иконки/ссылки — наведение только на устройствах с курсором */
+.highlight-hover {
+    transition: transform 0.15s ease, color 0.15s ease, filter 0.15s ease, text-shadow 0.15s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .highlight-hover:hover {
+        opacity: 1;
+        transform: scale(1.05);
+        color: #ff9d00;
+        text-shadow: 0 0 10px #ff9d00;
+        filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(1860%) hue-rotate(359deg) brightness(105%) contrast(104%);
+    }
+}
+
+/* Тап — подсветка, отпустил → исчезла */
+.highlight-hover:active {
+    transform: scale(0.97);
     color: #ff9d00;
     text-shadow: 0 0 10px #ff9d00;
     filter: brightness(0) saturate(100%) invert(68%) sepia(79%) saturate(1860%) hue-rotate(359deg) brightness(105%) contrast(104%);
@@ -80,17 +95,23 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     border: 1px solid #ff9b00;
-}
-
-.event-cards__card:hover {
-    transform: scale(1.01);
-    z-index: 1;
-    box-shadow: 0 0 50px #ff9b00;
     cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .event-cards__card:hover {
+        transform: scale(1.01);
+        z-index: 1;
+        box-shadow: 0 0 50px #ff9b00;
+    }
+}
+
+/* Тап: та же подсветка, но отпустил — исчезла */
 .event-cards__card:active {
-    transform: scale(1.01);
+    transform: scale(0.99);
+    z-index: 1;
+    box-shadow: 0 0 30px #ff9b00;
 }
 
 .event-cards__image {
@@ -149,6 +170,8 @@ body {
     padding-left: 5% !important;
     padding-right: 5% !important;
     border-radius: 7px !important;
+    cursor: pointer;
+    transition: transform 0.12s ease, background-color 0.12s ease, color 0.12s ease;
 }
 
 .booking-button {
@@ -168,10 +191,17 @@ body {
     border: solid white;
 }
 
-.buttons:active {
-    scale: 0.98;
+/* Кнопки внутри карточки: наведение только для мыши */
+@media (hover: hover) and (pointer: fine) {
+    .buttons:hover {
+        transform: scale(1.03);
+    }
 }
 
+/* Тап: сжатие, отпустил → вернулось */
+.buttons:active {
+    transform: scale(0.95);
+}
 
 .event-cards__info {
     position: absolute;
@@ -296,7 +326,6 @@ body {
         font-size: 10px !important;
     }
 }
-
 
 @media (max-width: 500px) {
     .navbar {

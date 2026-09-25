@@ -1,63 +1,49 @@
-const galleryImage = document.querySelectorAll('.gallery-image');
+const mainImageContainer = document.querySelector('.main-image');
+const mainImage = mainImageContainer.querySelector('img');
 const slides = document.querySelectorAll('.slide');
-const mainImage = document.querySelector('.main-image');
 
-// Обмен ссылками между main-image и кликнутым slide
+// Если у главной картинки нет src — ставим случайный слайд
+if (!mainImage.getAttribute('src') && slides.length) {
+    const randomSlide = slides[Math.floor(Math.random() * slides.length)];
+    const sourceImg = randomSlide.querySelector('img');
+    if (sourceImg) mainImage.src = sourceImg.src;
+}
+
+// Клик по слайду — подменяем главную
 slides.forEach(slide => {
     slide.addEventListener('click', () => {
-        if (!mainImage) return;
-
         const slideImg = slide.querySelector('img');
-        if (!slideImg) return;
-
-        const slideSrc = slideImg.src;
-
-        mainImage.src = slideSrc;
+        if (slideImg) mainImage.src = slideImg.src;
     });
 });
 
+// Превью по клику на главную
+function openPreview(sourceImg) {
+    document.querySelectorAll('.gallery-preview, .gallery-overlay').forEach(el => el.remove());
 
-galleryImage.forEach(img => {
-    img.addEventListener('click', () => {
-        const imgOverlay = document.createElement('div');
-        imgOverlay.style.cssText = `
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.8);
-            cursor: pointer;
-        `;
+    const overlay = document.createElement('div');
+    overlay.className = 'gallery-overlay';
+    overlay.style.cssText = `
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.8);
+        cursor: pointer;
+    `;
 
-        document.querySelectorAll('.gallery-preview').forEach(el => el.remove());
+    const clone = sourceImg.cloneNode(true);
+    clone.classList.add('gallery-preview');
 
-        const imgClone = img.cloneNode(true);
-        imgClone.classList.remove('gallery-image');
-        imgClone.classList.add('gallery-preview');
+    const close = () => {
+        clone.remove();
+        overlay.remove();
+    };
 
-        imgClone.addEventListener('click', () => {
-            imgClone.remove();
-            imgOverlay.remove();
-        });
-        imgOverlay.addEventListener('click', () => {
-            imgClone.remove();
-            imgOverlay.remove();
-        });
+    clone.addEventListener('click', close);
+    overlay.addEventListener('click', close);
 
-        imgClone.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: auto;
-            max-width: 90vw;
-            max-height: 90vh;
-            object-fit: contain;
-            z-index: 1001;
-            cursor: pointer;
-        `;
+    document.body.appendChild(overlay);
+    document.body.appendChild(clone);
+}
 
-        document.body.appendChild(imgOverlay);
-        document.body.appendChild(imgClone);
-    });
-});
+mainImage.addEventListener('click', () => openPreview(mainImage));
